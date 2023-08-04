@@ -84,6 +84,8 @@ namespace Star_Wars_Starfighter_TEX
                 imageComboBox.Items.Add("0 - 8 bit, 256 RGBA indexed");
                 imageComboBox.Items.Add("2 - 24 bit RGB image");
                 imageComboBox.Items.Add("3 - 32 bit RGBA image");
+
+                imageComboBox.SelectedIndex = 0;
             }
             else if (gameCombobox.SelectedIndex == 1)
             {
@@ -92,6 +94,8 @@ namespace Star_Wars_Starfighter_TEX
                 imageComboBox.Items.Add("3 - 24 bit RGB image");
                 imageComboBox.Items.Add("4 - 32 bit RGBA image");
                 imageComboBox.Items.Add("5 - 4 bit, 16 RGBA indexed");
+
+                imageComboBox.SelectedIndex = 0;
             }
             else
             {
