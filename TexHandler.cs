@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -30,8 +31,7 @@ namespace Star_Wars_Starfighter_TEX
         public int VersionID; //2-jedi star fighter. 1-starfighter
         public int ImageType;
         public int U1;
-        public int U2;
-        public int U3;
+        public int U2; //Zero
 
         public int Height;
         public int Width;
@@ -44,11 +44,10 @@ namespace Star_Wars_Starfighter_TEX
             using (Stream stream = File.Open(path, FileMode.Open))
             {
                 MagicWords = StreamUtil.ReadString(stream, 4);
-                VersionID = StreamUtil.ReadInt16(stream);
-                ImageType = StreamUtil.ReadInt8(stream);
-                U1 = StreamUtil.ReadInt8(stream);
-                U2 = StreamUtil.ReadInt16(stream);
-                U3 = StreamUtil.ReadInt16(stream);
+                VersionID = StreamUtil.ReadUInt16(stream);
+                ImageType = StreamUtil.ReadUInt8(stream);
+                U1 = StreamUtil.ReadUInt8(stream);
+                U2 = StreamUtil.ReadUInt32(stream); //Zero
 
                 Height = StreamUtil.ReadUInt32(stream);
                 Width = StreamUtil.ReadUInt32(stream);
@@ -328,8 +327,7 @@ namespace Star_Wars_Starfighter_TEX
             StreamUtil.WriteInt16(stream, VersionID);
             StreamUtil.WriteUInt8(stream, ImageType);
             StreamUtil.WriteUInt8(stream, U1);
-            StreamUtil.WriteInt16(stream, U2);
-            StreamUtil.WriteInt16(stream, U3);
+            StreamUtil.WriteInt32(stream, U2);
 
             StreamUtil.WriteInt32(stream, bitmap.Height);
             StreamUtil.WriteInt32(stream, bitmap.Width);

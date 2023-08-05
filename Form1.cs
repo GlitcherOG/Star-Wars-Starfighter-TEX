@@ -23,8 +23,8 @@ namespace Star_Wars_Starfighter_TEX
                 //string[] strings = Directory.GetFiles(mainPath, "*.tex", SearchOption.TopDirectoryOnly);
                 //for (int i = 0; i < strings.Length; i++)
                 //{
-                //    texHandler = new TexHandler();
-                //    texHandler.Load(openFileDialog.FileName);
+                //    TexHandler texHandler1 = new TexHandler();
+                //    texHandler1.Load(strings[i]);
                 //}
 
                 texHandler = new TexHandler();
