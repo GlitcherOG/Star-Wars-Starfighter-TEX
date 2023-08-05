@@ -385,6 +385,14 @@ namespace Star_Wars_Starfighter_TEX
                     StreamUtil.WriteUInt8(stream, colors[i].A);
                 }
 
+                for (int i = 0; i + colors.Count < 256; i++)
+                {
+                    StreamUtil.WriteUInt8(stream, 0);
+                    StreamUtil.WriteUInt8(stream, 0);
+                    StreamUtil.WriteUInt8(stream, 0);
+                    StreamUtil.WriteUInt8(stream, 0xFF);
+                }
+
                 StreamUtil.WriteBytes(stream, matrix);
 
             }
@@ -448,6 +456,14 @@ namespace Star_Wars_Starfighter_TEX
                     StreamUtil.WriteUInt8(stream, colors[i].G);
                     StreamUtil.WriteUInt8(stream, colors[i].B);
                     StreamUtil.WriteUInt8(stream, colors[i].A);
+                }
+
+                for (int i = 0; i+colors.Count < 256; i++)
+                {
+                    StreamUtil.WriteUInt8(stream, 0);
+                    StreamUtil.WriteUInt8(stream, 0);
+                    StreamUtil.WriteUInt8(stream, 0);
+                    StreamUtil.WriteUInt8(stream, 0xFF);
                 }
 
                 StreamUtil.WriteBytes(stream, matrix);
@@ -523,6 +539,14 @@ namespace Star_Wars_Starfighter_TEX
                     StreamUtil.WriteUInt8(stream, colors[i].G);
                     StreamUtil.WriteUInt8(stream, colors[i].B);
                     StreamUtil.WriteUInt8(stream, colors[i].A);
+                }
+
+                for (int i = 0; i + colors.Count < 16; i++)
+                {
+                    StreamUtil.WriteUInt8(stream, 0);
+                    StreamUtil.WriteUInt8(stream, 0);
+                    StreamUtil.WriteUInt8(stream, 0);
+                    StreamUtil.WriteUInt8(stream, 0xFF);
                 }
 
                 StreamUtil.WriteBytes(stream, matrix);
