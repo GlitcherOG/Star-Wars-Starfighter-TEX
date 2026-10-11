@@ -49,6 +49,11 @@ namespace Star_Wars_Starfighter_TEX
                 U1 = StreamUtil.ReadUInt8(stream);
                 U2 = StreamUtil.ReadUInt32(stream); //Zero
 
+                if(U2!=0&& U2 != 3)
+                {
+                    Console.WriteLine("");
+                }
+
                 Height = StreamUtil.ReadUInt32(stream);
                 Width = StreamUtil.ReadUInt32(stream);
 
@@ -339,6 +344,14 @@ namespace Star_Wars_Starfighter_TEX
             else if (Game == 1)
             {
                 SaveJSImages(stream);
+            }
+
+            if (U2 == 1)
+            {
+                for (int i = 0; i < bitmap.Height * bitmap.Width; i++)
+                {
+                    StreamUtil.WriteInt32(stream, 0x80);
+                }
             }
 
             if (File.Exists(path))

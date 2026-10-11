@@ -31,7 +31,7 @@ namespace Star_Wars_Starfighter_TEX
                 texHandler.Load(openFileDialog.FileName);
                 pictureBox1.Image = texHandler.bitmap;
 
-                this.Text = "Tex Editor - "+ openFileDialog.FileName;
+                this.Text = "Tex Editor - " + openFileDialog.FileName;
 
                 gameCombobox.SelectedIndex = texHandler.Game;
                 if (texHandler.Game == 0)
@@ -55,6 +55,7 @@ namespace Star_Wars_Starfighter_TEX
                         imageComboBox.SelectedIndex = 3;
                 }
                 U0Tex.Value = texHandler.U1;
+                U2Tex.Value = texHandler.U2;
 
                 GC.Collect();
             }
@@ -150,7 +151,7 @@ namespace Star_Wars_Starfighter_TEX
 
         private void blackCheck_CheckedChanged(object sender, EventArgs e)
         {
-            if(blackCheck.Checked)
+            if (blackCheck.Checked)
             {
                 pictureBox1.BackColor = Color.Black;
             }

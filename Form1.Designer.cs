@@ -40,8 +40,11 @@
             label3 = new Label();
             U0Tex = new NumericUpDown();
             blackCheck = new CheckBox();
+            U2Tex = new NumericUpDown();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)U0Tex).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)U2Tex).BeginInit();
             SuspendLayout();
             // 
             // LoadTex
@@ -166,11 +169,31 @@
             blackCheck.UseVisualStyleBackColor = true;
             blackCheck.CheckedChanged += blackCheck_CheckedChanged;
             // 
+            // U2Tex
+            // 
+            U2Tex.Location = new Point(143, 122);
+            U2Tex.Maximum = new decimal(new int[] { 256, 0, 0, 0 });
+            U2Tex.Minimum = new decimal(new int[] { 2, 0, 0, int.MinValue });
+            U2Tex.Name = "U2Tex";
+            U2Tex.Size = new Size(120, 23);
+            U2Tex.TabIndex = 14;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(143, 104);
+            label4.Name = "label4";
+            label4.Size = new Size(21, 15);
+            label4.TabIndex = 13;
+            label4.Text = "U2";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(U2Tex);
+            Controls.Add(label4);
             Controls.Add(blackCheck);
             Controls.Add(U0Tex);
             Controls.Add(label3);
@@ -187,6 +210,7 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)U0Tex).EndInit();
+            ((System.ComponentModel.ISupportInitialize)U2Tex).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -205,5 +229,7 @@
         private Label label3;
         private NumericUpDown U0Tex;
         private CheckBox blackCheck;
+        private NumericUpDown U2Tex;
+        private Label label4;
     }
 }
